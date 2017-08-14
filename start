@@ -1,0 +1,8 @@
+#!/bin/bash
+# build project
+pm2 stop blockchain-explorer-api
+pm2 delete blockchain-explorer-api
+gulp clean
+# gulp
+babel src -d dist --source-maps
+pm2 start ./dist/app.js --name blockchain-explorer-api -i 0 --log-date-format="YYYY-MM-DD HH:mm Z" -o "./logs/blockchain-explorer-api.log" -e "./logs/blockchain-explorer-api.error.log"
