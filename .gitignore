@@ -1,4 +1,14 @@
+# OS-specific
+.DS_Store
+
+# Editor swapfiles
+.*.sw?
+*~
+
+#IDE
+.idea
+
 dist
 node_modules
 *.log
-.idea
+
